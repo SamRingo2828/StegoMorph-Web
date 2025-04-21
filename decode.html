@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aplikasi Steganografi DCT">
+    <title>SteganoMorph - Decode</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="gradient-text">Stegano</span>Morph
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="encode.html">Encode</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="decode.html">Decode</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="uji.html">Pengujian</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="card shadow border-0 mx-auto bg-dark-2" style="max-width: 800px;">
+            <div class="card-header bg-dark-3 text-white py-3 rounded-top">
+                <h5 class="mb-0">🔓 Ekstrak Pesan Rahasia</h5>
+            </div>
+            <div class="card-body px-4 py-4">
+                <!-- Preview Section -->
+                <div class="preview-card rounded-3 mb-4">
+                    <div class="preview-header bg-dark-3 py-2 text-center">Gambar Terenkripsi</div>
+                    <div class="preview-body p-3">
+                        <img id="uploadPreview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="preview-image rounded-2" alt="Preview">
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <div class="mb-4">
+                    <label class="form-label text-light">📁 Upload Gambar</label>
+                    <input type="file" class="form-control bg-dark-3 text-light border-dark" id="file1" accept="image/*">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label text-light">🔑 Kata Sandi (Optional)</label>
+                    <input type="text" class="form-control bg-dark-3 text-light border-dark" id="pass1" placeholder="Masukkan password">
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary w-100 py-2 rounded-pill" id="decodeBtn">
+                            <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                            🔍 Ekstrak Pesan
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-danger w-100 py-2 rounded-pill" id="clearBtnDecode">
+                            🗑️ Clear Input
+                        </button>
+                    </div>
+                </div>
+
+                <div id="result" class="alert alert-dark-3 mt-4 p-3 rounded-2">
+                    <span class="text-muted">Hasil ekstraksi akan muncul disini...</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/cryptostego.min.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
